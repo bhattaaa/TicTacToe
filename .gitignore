@@ -1,3 +1,4 @@
 Main.class
 TicTacToeBoard.class
 tttIndexException.class
+SpaceTakenException.class
