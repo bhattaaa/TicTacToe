@@ -41,9 +41,11 @@ public class TicTacToeBoard{
         
     }
     private void checkBounds(int row, int column) throws tttIndexException{
-        if(!((0 <= row && row<SIZE) && (0 <= column && column<SIZE))){
-            throw new tttIndexException("row/column pair not in board");
-        }
+     // System.out.println('r'+Integer.toString(row));
+     // System.out.println('c'+Integer.toString(column));
+      if(!((0 <= row && row<SIZE) && (0 <= column && column<SIZE))){
+          throw new tttIndexException("row/column pair not in board");
+      }
     }
     
     /*
@@ -78,8 +80,12 @@ public class TicTacToeBoard{
      * @returns True if no spaces are unmarked
      */
     public boolean isTied() throws tttIndexException{
+      System.out.println("istied running");
       for(int i = 0; i < SIZE; i++){
-        for(int j=0; i < SIZE; j++){
+        for(int j = 0; i < SIZE; j++){
+          // TODO Why does this print only once?
+          System.out.println(Integer.toString(i));
+          System.out.println(Integer.toString(j));
           if(isOpen(i,j))
           {
             return false;
