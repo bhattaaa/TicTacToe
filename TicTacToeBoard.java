@@ -54,7 +54,7 @@ public class TicTacToeBoard{
      */
     public boolean isOpen(int row, int column) throws tttIndexException{
       checkBounds(row, column);
-      return 'x' == board[row][column];
+      return ' ' == board[row][column];
     }
 
     /*
@@ -111,7 +111,7 @@ public class TicTacToeBoard{
       {
         char[] column = new char[SIZE];
         for(int j = 0; j < SIZE; j++){
-          column[j] = board[i][j];
+          column[j] = board[j][i];
         }
         if(match(column, mark))
         {
