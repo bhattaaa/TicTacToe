@@ -1,0 +1,12 @@
+
+Partners: Ankit Bhattarai, Noah Kaplan
+
+Collaboration: We used github to collaborate with each other. Although, we used github we met with each other in CS Lab and implemented each functions taking turn and then committing in github. Ankit is great! :) Noah is also a great teammate, I learned a lot about github and java from him.
+
+Challenging aspect: We think the most challenging aspects of the projects were to declare the exception class for each exception that might occur, and dealing with Java's very specific way of handling exceptions.
+
+We think every requirements are met in our implementation.
+
+It doesn't diverge from python implementation. We stuck almost exactly to the python implementation to focus on the java.
+
+We learned how different classes, methods work in Java. The design aspect of all these things. 
