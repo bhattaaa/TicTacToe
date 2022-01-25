@@ -2,6 +2,9 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
+/**
+ * Main class runs the tic tac toe game
+ */
 public class Main{
   private static Random randgen = new Random();
   private static Scanner scanner = new Scanner(System.in);
@@ -10,7 +13,8 @@ public class Main{
   }
 
   /**
-  Play the game. Returns nothing,called for side effects.
+  Play the game. 
+  @throws tttIndexException: This should never happen. It reflects a problem in board design
    */
   public static void play() throws tttIndexException{
       boolean isHumanTurn = randgen.nextBoolean();
@@ -51,16 +55,15 @@ public class Main{
 
   /**
     Gets a row and column from the human player, and marks an "X" accordingly.
-    Parameter: board, a TicTacToeBoard
-    Returns: Nothing, called for side effects.
+    @param TicTacToeBoard board: the TicTacToeBoard 
    */
   private static void humanTurn(TicTacToeBoard board){
     System.out.println("It's your turn");
     boolean turnover = false;
     while(!turnover){
-      System.out.println("Row "+Integer.toString(board.getSize()));
+      System.out.println("Enter row 1-"+Integer.toString(board.getSize()));
       int row = scanner.nextInt();
-      System.out.println("Column "+Integer.toString(board.getSize()));
+      System.out.println("Enter column 1-"+Integer.toString(board.getSize()));
       int column = scanner.nextInt();
       try{
         board.markSpace(row-1,column-1,'x');
@@ -106,6 +109,7 @@ public class Main{
 
   /**
    * Marks an 'o' in a randomly chosen space.
+   * @param TicTacToeBoard board: the board
    */
   private static void computerTurn(TicTacToeBoard board){
     boolean turnOver = false;
