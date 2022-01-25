@@ -3,7 +3,7 @@
     Players are 'x' and 'o'. 
     Empty spaces are represented by the space character.
     @author Janet,Ankit,Noah.
-    */
+*/
    
 
 public class TicTacToeBoard{
@@ -11,6 +11,9 @@ public class TicTacToeBoard{
     private char[][] board = new char[SIZE][SIZE];
 
     
+    /*
+     * Initizlizes board spaces to empty space
+     */
     public TicTacToeBoard(){
         // Initializing array with blank spaces.
         for(int i=0; i<SIZE;i++){
@@ -19,9 +22,17 @@ public class TicTacToeBoard{
             }
         }
     }
+
+    /*
+     * @returns int SIZE: the size of the tic tac toe board
+     */
     public int getSize(){
         return SIZE;
     }
+
+    /*
+     * outputs the current board
+     */
     public void printBoard(){
         String separator = "";
         for(int i=0; i<SIZE;i++){
@@ -40,9 +51,14 @@ public class TicTacToeBoard{
         }
         
     }
+
+    /*
+     * checks if a point is on the board and raises an exception if not
+     * @param int row: the row
+     * @params int col: the column
+     * @throws tttIndexException
+     */
     private void checkBounds(int row, int column) throws tttIndexException{
-     // System.out.println('r'+Integer.toString(row));
-     // System.out.println('c'+Integer.toString(column));
       if(!((0 <= row && row<SIZE) && (0 <= column && column<SIZE))){
           throw new tttIndexException("row/column pair not in board");
       }
@@ -80,12 +96,8 @@ public class TicTacToeBoard{
      * @returns True if no spaces are unmarked
      */
     public boolean isTied() throws tttIndexException{
-      System.out.println("istied running");
       for(int i = 0; i < SIZE; i++){
-        for(int j = 0; i < SIZE; j++){
-          // TODO Why does this print only once?
-          System.out.println(Integer.toString(i));
-          System.out.println(Integer.toString(j));
+        for(int j = 0; j < SIZE; j++){
           if(isOpen(i,j))
           {
             return false;
